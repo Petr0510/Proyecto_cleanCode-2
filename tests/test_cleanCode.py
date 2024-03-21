@@ -1,7 +1,7 @@
 from io import StringIO
 import unittest
 
-#Para hacer que las pruebas corra importamos sys
+"""Para hacer que las pruebas corra importamos sys"""
 import sys
 from unittest.mock import patch
 sys.path.append("src")

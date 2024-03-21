@@ -23,7 +23,7 @@ Para ejecutar el programa y codificar un texto, sigue los siguientes pasos:
 - Abre una terminal en la carpeta donde se encuentran los archivos del programa.
 - Ejecuta el siguiente comando para iniciar el programa:
 
-    `python huffman_menu.py`
+    `python src\console\huffman_menu.py`
 
 - Se mostrará un menú donde puedes elegir entre codificar un texto o decodificar un texto:
 
