@@ -64,9 +64,10 @@ class HuffmanCoding:
         self._build_codes(node.right, code + "1")
 
     def encode(self):
-        """Codifica el texto de entrada utilizando el árbol Huffman
-        TENGO QUE HACER UNA FUNCION A PARTE DE LAS EXCEPCIONES
-        EXCEPCIONES CASOS DE ERROR POSIBLES"""
+        """Codifica el texto de entrada utilizando el árbol Huffman"""
+        
+        #TENGO QUE HACER UNA FUNCION A PARTE DE LAS EXCEPCIONES
+        """EXCEPCIONES CASOS DE ERROR POSIBLES"""
         if not isinstance(self.text, str):
             raise TypeError("Input text must be a string")
         if len(self.text) < 2:
