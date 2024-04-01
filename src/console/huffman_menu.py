@@ -25,8 +25,10 @@ class HuffmanMenu:
                 text_to_decode = input("Ingresa el texto a decodificar: ")
                 decoded_text = self.huffman_coding.decode(text_to_decode)
                 print(f"Texto decodificado: {decoded_text}")
+                
             else:
                 print("Debe realizar una ejecución de codificación antes de usar esta opción")
+                
         elif option == "3":
             print("Saliendo del programa...")
         else:
