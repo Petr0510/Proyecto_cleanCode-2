@@ -21,8 +21,7 @@ class HuffmanCoding:
         self.huffman_code = {}
         self.text = text
         self.freq = defaultdict(int)
-        """variable para armar arbol de huffman"""
-        self.heap = [] 
+        self.heap = [] #variable para armar arbol de huffman
         self.codes = {}
         self.reverse_codes = {}
         
@@ -31,6 +30,7 @@ class HuffmanCoding:
 
         self._build_freq()
         self._build_heap()
+    
 
     def _build_freq(self):
         """Construye un diccionario de frecuencias de caracteres en el texto"""
@@ -62,18 +62,20 @@ class HuffmanCoding:
             return
         self._build_codes(node.left, code + "0")
         self._build_codes(node.right, code + "1")
+        
+    def validate_input(self, text):
+        """ Valida la entrada de texto y lanza error si es necesario"""
+        if not isinstance(text, str):
+                raise TypeError("Input text must be a string")
+        if len(text) < 2:
+                raise ValueError("Input text is too short")
+        if not self.heap:
+            raise ValueError("Invalid tree structure")
 
     def encode(self):
         """Codifica el texto de entrada utilizando el árbol Huffman"""
         
-        #TENGO QUE HACER UNA FUNCION A PARTE DE LAS EXCEPCIONES
-        """EXCEPCIONES CASOS DE ERROR POSIBLES"""
-        if not isinstance(self.text, str):
-            raise TypeError("Input text must be a string")
-        if len(self.text) < 2:
-            raise ValueError("Input text is too short")
-        if not self.heap:
-            raise ValueError("Invalid tree structure")
+        self.validate_input(self.text)
 
         self._build_tree()
         root = self.heap[0]
