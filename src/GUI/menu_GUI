@@ -1,0 +1,49 @@
+from kivy.app import App
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.label import Label
+from kivy.uix.textinput import TextInput
+from kivy.uix.button import Button
+from kivy.uix.popup import Popup
+from logica.huffman_cleanCode import HuffmanCoding
+
+
+class HuffmanGUI(App):
+    def build(self):
+        self.huffman_coding = None
+
+        layout = BoxLayout(orientation='vertical')
+
+        self.text_input = TextInput(multiline=False)
+        layout.add_widget(Label(text='Texto a codificar:'))
+        layout.add_widget(self.text_input)
+
+        encode_button = Button(text='Codificar texto')
+        encode_button.bind(on_press=self.encode_text)
+        layout.add_widget(encode_button)
+
+        decode_button = Button(text='Decodificar texto')
+        decode_button.bind(on_press=self.decode_text)
+        layout.add_widget(decode_button)
+
+        self.output_label = Label(text='')
+        layout.add_widget(self.output_label)
+
+        return layout
+
+    def encode_text(self, instance):
+        text = self.text_input.text
+        self.huffman_coding = HuffmanCoding(text)
+        encoded = self.huffman_coding.encode()
+        self.output_label.text = f'Texto codificado: {encoded}'
+
+    def decode_text(self, instance):
+        if self.huffman_coding:
+            text_to_decode = self.text_input.text
+            decoded_text = self.huffman_coding.decode(text_to_decode)
+            self.output_label.text = f'Texto decodificado: {decoded_text}'
+        else:
+            popup = Popup(title='Error', content=Label(text='Primero debes codificar un texto'), size_hint=(None, None), size=(300, 200))
+            popup.open()
+
+if __name__ == '__main__':
+    HuffmanGUI().run()
