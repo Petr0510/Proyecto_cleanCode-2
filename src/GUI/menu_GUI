@@ -4,8 +4,9 @@ from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.uix.popup import Popup
+import sys
+sys.path.append("src")
 from logica.huffman_cleanCode import HuffmanCoding
-
 
 class HuffmanGUI(App):
     def build(self):
@@ -32,18 +33,30 @@ class HuffmanGUI(App):
 
     def encode_text(self, instance):
         text = self.text_input.text
-        self.huffman_coding = HuffmanCoding(text)
-        encoded = self.huffman_coding.encode()
-        self.output_label.text = f'Texto codificado: {encoded}'
+        try:
+            self.huffman_coding = HuffmanCoding(text)
+            encoded = self.huffman_coding.encode()
+            self.output_label.text = f'Texto codificado: {encoded}'
+            self.text_input.text = ''  # Limpiar el contenido del TextInput
+        except ValueError as e:
+            popup = Popup(title='Error', content=Label(text=str(e)), size_hint=(None, None), size=(300, 200))
+            popup.open()
 
     def decode_text(self, instance):
         if self.huffman_coding:
             text_to_decode = self.text_input.text
-            decoded_text = self.huffman_coding.decode(text_to_decode)
-            self.output_label.text = f'Texto decodificado: {decoded_text}'
+            try:
+                decoded_text = self.huffman_coding.decode(text_to_decode)
+                self.output_label.text = f'Texto decodificado: {decoded_text}'
+                self.text_input.text = ''  # Limpiar el contenido del TextInput
+            except ValueError as e:
+                popup = Popup(title='Error', content=Label(text=str(e)), size_hint=(None, None), size=(300, 200))
+                popup.open()
         else:
             popup = Popup(title='Error', content=Label(text='Primero debes codificar un texto'), size_hint=(None, None), size=(300, 200))
             popup.open()
 
 if __name__ == '__main__':
     HuffmanGUI().run()
+
+
