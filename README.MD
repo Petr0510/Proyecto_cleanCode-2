@@ -21,9 +21,9 @@ Para ejecutar el programa y codificar un texto, sigue los siguientes pasos:
 - Clona el repositorio o descarga los archivos del programa.
 - Asegúrate de tener Python instalado en tu sistema.
 - Abre una terminal en la carpeta donde se encuentran los archivos del programa.
-- Ejecuta el siguiente comando para iniciar el programa:
+- Ejecuta el siguiente comando para iniciar el programa: 
 
-    `python src\console\huffman_menu.py`
+    `python src\GUI\menu_GUI.py`
 
 - Se mostrará un menú donde puedes elegir entre codificar un texto o decodificar un texto:
 
