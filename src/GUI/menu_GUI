@@ -40,7 +40,7 @@ class HuffmanGUI(App):
             self.output_label.text = f'Texto codificado: {encoded}'
             self.text_input.text = ''  # Limpiar el contenido del TextInput
         except ValueError as e:
-            popup = Popup(title='Error', content=Label(text=str(e)), size_hint=(None, None), size=(300, 200))
+            popup = Popup(title='Error', content=Label(text=str(e)), size_hint=(None, None), size=(500, 200))
             popup.open()
 
     def decode_text(self, instance):
@@ -51,7 +51,7 @@ class HuffmanGUI(App):
                 self.output_label.text = f'Texto decodificado: {decoded_text}'
                 self.text_input.text = ''  # Limpiar el contenido del TextInput
             except ValueError as e:
-                popup = Popup(title='Error', content=Label(text=str(e)), size_hint=(None, None), size=(300, 200))
+                popup = Popup(title='Error', content=Label(text=str(e)), size_hint=(None, None), size=(500, 200))
                 popup.open()
         else:
             popup = Popup(title='Error', content=Label(text='Primero debes codificar un texto'), size_hint=(None, None), size=(300, 200))

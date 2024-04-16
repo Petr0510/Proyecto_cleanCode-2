@@ -26,7 +26,7 @@ class HuffmanCoding:
         self.reverse_codes = {}
         
         if not self.text:
-            raise ValueError("Input text is empty")
+            raise ValueError("Input text is empty ¡YOU SHOULD ENTER A TEXT...! ")
 
         self._build_freq()
         self._build_heap()
@@ -68,7 +68,7 @@ class HuffmanCoding:
         if not isinstance(text, str):
                 raise TypeError("Input text must be a string")
         if len(text) < 2:
-                raise ValueError("Input text is too short")
+                raise ValueError("Input text is too short, MUST BE OVER THAN ONE CHARACTER")
         if not self.heap:
             raise ValueError("Invalid tree structure")
 
@@ -87,9 +87,9 @@ class HuffmanCoding:
     def decode(self, encoded_text):
         """Decodifica el texto codificado utilizando los códigos Huffman inversos"""
         if not all(bit in ('0', '1') for bit in encoded_text):
-            raise ValueError("Invalid encoded data")
+            raise ValueError("Invalid encoded data, ONE BIT CHANGE DURING THE DECODE")
         if not encoded_text:
-            raise ValueError("Encoded text is empty")
+            raise ValueError("Encoded text is empty ¡YOU SHOULD ENTER A TEXT...!")
 
         curr_code = ""
         decoded_text = ""
@@ -102,6 +102,6 @@ class HuffmanCoding:
                 curr_code = ""
             else:
                 if len(curr_code) > max(len(code) for code in self.reverse_codes):
-                    raise ValueError("Invalid bit sequence")
+                    raise ValueError("Invalid bit sequence, ONLY BINARY REFERENCE")
 
         return decoded_text
