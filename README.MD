@@ -18,12 +18,18 @@ Este programa implementa el algoritmo de codificación Huffman para comprimir y 
 
 Para ejecutar el programa y codificar un texto, sigue los siguientes pasos:
 
-- Clona el repositorio o descarga los archivos del programa.
 - Asegúrate de tener Python instalado en tu sistema.
-- Abre una terminal en la carpeta donde se encuentran los archivos del programa.
-- Ejecuta el siguiente comando para iniciar el programa: 
 
-    `python src\GUI\menu_GUI.py`
+- Clona el repositorio o descarga los archivos del programa.
+
+    `git clone https://github.com/Petr0510/Proyecto_cleanCode-2.git`
+
+- Abre una terminal en la carpeta donde se encuentran los archivos del programa.
+
+    `cd Proyecto_cleanCode-2`
+
+- Ejecuta el siguiente comando para iniciar el programa: 
+    `python src\console\huffman_menu.py`
 
 - Se mostrará un menú donde puedes elegir entre codificar un texto o decodificar un texto:
 
@@ -32,6 +38,10 @@ Para ejecutar el programa y codificar un texto, sigue los siguientes pasos:
     3. Si eliges salir, el programa se cerrará.
 
 - El programa mostrará el texto original, el texto codificado y el texto decodificado respectivamente.
+
+## Para acceder a la interfaz, ejecutar el siguiente comando:
+
+`python src/GUI/menu_GUI`
 
 ### Ejecución de Pruebas Unitarias
 El programa incluye pruebas unitarias para verificar su correcto funcionamiento. Para ejecutar las pruebas unitarias, sigue estos pasos:
