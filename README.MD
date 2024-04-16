@@ -29,6 +29,7 @@ Para ejecutar el programa y codificar un texto, sigue los siguientes pasos:
     `cd Proyecto_cleanCode-2`
 
 - Ejecuta el siguiente comando para iniciar el programa: 
+
     `python src\console\huffman_menu.py`
 
 - Se mostrará un menú donde puedes elegir entre codificar un texto o decodificar un texto:
@@ -57,6 +58,16 @@ El programa incluye pruebas unitarias para verificar su correcto funcionamiento.
 
 - Se ejecutarán las pruebas y se mostrará el resultado en la terminal.
 
+
+## Segunda forma de ejecutar pruebas unitarias
+
+- Ubicate en la carpeta del programa:
+
+    `cd Proyecto_cleanCode-2`
+
+- Ejecuta el siguiente comando:
+
+    `python tests/test_cleanCode.py`
 
 
 
