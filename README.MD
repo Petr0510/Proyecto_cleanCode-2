@@ -42,7 +42,13 @@ Para ejecutar el programa y codificar un texto, sigue los siguientes pasos:
 
 ## Para acceder a la interfaz, ejecutar el siguiente comando:
 
-`python src/GUI/menu_GUI`
+1. Instalar kivy en nuestro entorno de trabajo
+    
+    `pip install kivy`
+
+2. Ejecutar el siguiente comando
+
+    `python src/GUI/menu_GUI`
 
 ### Ejecución de Pruebas Unitarias
 El programa incluye pruebas unitarias para verificar su correcto funcionamiento. Para ejecutar las pruebas unitarias, sigue estos pasos:
