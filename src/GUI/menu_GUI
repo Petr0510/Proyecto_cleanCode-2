@@ -33,15 +33,21 @@ class HuffmanGUI(App):
         return layout
 
     def encode_text(self, instance):
-        text = self.text_input.text
-        try:
-            self.huffman_coding = HuffmanCoding(text)
-            encoded = self.huffman_coding.encode()
-            self.output_label.text = f'Texto codificado: {encoded}'
-            self.text_input.text = ''  # Limpiar el contenido del TextInput
-        except ValueError as e:
-            popup = Popup(title='Error', content=Label(text=str(e)), size_hint=(None, None), size=(500, 200))
-            popup.open()
+            text = self.text_input.text
+            if len(set(text)) != len(text):  # Verificar si hay caracteres repetidos
+                popup = Popup(title='Error', content=Label(text='No se permiten caracteres repetidos'), size_hint=(None, None), size=(500, 200))
+                popup.open()
+                return
+        
+            try:
+                self.huffman_coding = HuffmanCoding(text)
+                encoded = self.huffman_coding.encode()
+                self.output_label.text = f'Texto codificado: {encoded}'
+                self.text_input.text = ''  # Limpiar el contenido del TextInput
+            except ValueError as e:
+                popup = Popup(title='Error', content=Label(text=str(e)), size_hint=(None, None), size=(500, 200))
+                popup.open()
+    
 
     def decode_text(self, instance):
         if self.huffman_coding:
